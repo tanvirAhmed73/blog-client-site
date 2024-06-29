@@ -33,7 +33,7 @@ const Page = () => {
     }).then((result) => {
       if (result.isConfirmed) {
         setLoading(true);
-        fetch(`http://localhost:5000/posts/${id}`, {
+        fetch(`https://lynea-server.vercel.app/posts/${id}`, {
           method: "DELETE",
         })
           .then((response) => response.json())

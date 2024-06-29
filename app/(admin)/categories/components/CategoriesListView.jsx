@@ -36,7 +36,7 @@ const CategoriesListView = () => {
           
             Swal.showLoading()
           
-            fetch(`http://localhost:5000/categories/${id}`, {
+            fetch(`https://lynea-server.vercel.app/categories/${id}`, {
               method: "DELETE",
             })
               .then((res) => res.json())
@@ -71,7 +71,7 @@ const CategoriesListView = () => {
         
     //       Swal.showLoading()
         
-    //       fetch(`http://localhost:5000/categories/${id}`, {
+    //       fetch(`https://lynea-server.vercel.app/categories/${id}`, {
     //         method: "DELETE",
     //       })
     //         .then((res) => res.json())

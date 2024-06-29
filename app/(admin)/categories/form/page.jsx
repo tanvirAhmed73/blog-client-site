@@ -37,7 +37,7 @@ const Page = () => {
       .then((res) => res.json())
       .then((data) => {
         const categoryData = { cateName, slugName, image: data.data.url };
-        fetch("http://localhost:5000/categories", {
+        fetch("https://lynea-server.vercel.app/categories", {
           method: "POST",
           cache: "no-cache",
           headers: {

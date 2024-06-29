@@ -49,7 +49,7 @@ const Page = ({ params }) => {
 
   useEffect(() => {
     const fetchPostDetails = async () => {
-      const res = await fetch(`http://localhost:5000/posts/${postId}`);
+      const res = await fetch(`https://lynea-server.vercel.app/posts/${postId}`);
       if (!res.ok) {
         throw new Error("Network response was not ok");
       }

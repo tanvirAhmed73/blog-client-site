@@ -85,7 +85,7 @@ const Page = () => {
           author,
           image: data.data.url,
         };
-        fetch("http://localhost:5000/posts", {
+        fetch("https://lynea-server.vercel.app/posts", {
           method: "POST",
           cache: "no-cache",
           headers: {

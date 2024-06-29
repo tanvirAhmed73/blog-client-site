@@ -14,7 +14,7 @@ const LoginButton = () => {
       const useremail = userCrediential.user.email;
       const photoUrl = userCrediential.user.photoURL;
       const authorsData = { userName, useremail, photoUrl };
-      fetch("http://localhost:5000/authors", {
+      fetch("https://lynea-server.vercel.app/authors", {
         method: "POST",
         cache: "no-cache",
         headers: {

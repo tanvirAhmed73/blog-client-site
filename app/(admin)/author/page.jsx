@@ -31,7 +31,7 @@ const Page = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/authors/${id}`, {
+        fetch(`https://lynea-server.vercel.app/authors/${id}`, {
           method: 'DELETE',
         })
           .then((res) => res.json())

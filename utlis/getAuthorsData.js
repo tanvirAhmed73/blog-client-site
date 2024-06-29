@@ -1,6 +1,6 @@
 
 const getAuthorsData = async() => {
-    const res = await fetch('http://localhost:5000/authors',{
+    const res = await fetch('https://lynea-server.vercel.app/authors',{
         cache: 'no-store'
     })
     const authorData = res.json()
