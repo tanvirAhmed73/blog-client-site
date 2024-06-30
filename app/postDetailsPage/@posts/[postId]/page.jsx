@@ -2,9 +2,6 @@
 import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import { Calendar, Clock, Tag, User, Star, ArrowBigLeft } from "lucide-react";
-import Header from "@/app/components/Header/Header";
-import NewsLetters from "@/app/components/NewsLetters/NewsLetters";
-import Footer from "@/app/components/Footer/Footer";
 import Link from "next/link";
 
 const ArticleInfo = ({ postDetails }) => (
@@ -62,7 +59,6 @@ const Page = ({ params }) => {
 
   return (
     <>
-      <Header />
       <main className="flex justify-center px-16 w-11/12  mx-auto py-10">
         <div className="flex gap-5 max-w-[1200px] w-full">
           <ArticleInfo postDetails={postDetails} />
@@ -86,8 +82,6 @@ const Page = ({ params }) => {
           </section>
         </div>
       </main>
-      <NewsLetters />
-      <Footer />
     </>
   );
 };

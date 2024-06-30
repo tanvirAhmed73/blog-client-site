@@ -6,7 +6,7 @@ const SearchBar = () => (
     <input
       type="text"
       placeholder="Quick Search..."
-      className=" w-full"
+      className="bg-transparent focus:outline-none w-full"
     />
   </div>
 );
