@@ -14,8 +14,8 @@ const PostListView = async () => {
   }
 
   return (
-    <div className="flex justify-center ">
-      <div>
+    <div className="">
+      <div className="">
         <PostCardMake postdata={postdata}/>
       </div>
     </div>

@@ -7,8 +7,16 @@
     padding: 0;
     box-sizing: border-box;
     
-    
 }
+
+/* styles.css */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
 
 .blur-sm {
   filter: blur(5px);

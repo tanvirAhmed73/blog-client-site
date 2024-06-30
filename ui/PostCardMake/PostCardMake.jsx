@@ -4,48 +4,47 @@ import man from "@/assets/trendingTopics/man.webp";
 
 const PostCardMake = ({ postdata }) => {
   return (
-    <div className="grid grid-cols-3 mx-auto gap-3 mt-5">
-      {postdata?.map((post) => (
-        <div
-          key={post._id}
-          className="card bg-base-100 border border-gray-200 shadow-md h-[500px] w-96 "
-        >
-          <figure>
-            <Image
+    <div className="flex flex-wrap gap-6 justify-center">
+      {postdata.map((post) => (
+        <div key={post._id} className="card w-96 bg-base-100 shadow-xl m-4">
+          <figure className="h-80 w-full overflow-hidden">
+            <img
               src={post.image}
-              alt="postImage"
-              width={400}
-              height={300}
+              alt="Shoes"
+              className="object-cover h-full w-full"
+              style={{ height: "350px", width: "384px" }}
             />
           </figure>
           <div className="card-body">
-            <h2 className="card-title text-2xl text-center">{post.title}</h2>
-            <p
-              className="line-clamp-3 text-center text-sm"
+            <h2 className="card-title text-md font-bold mb-2">
+              {post.title}
+            </h2>
+            {/* <p
+              className="line-clamp-2  text-sm mb-4"
               dangerouslySetInnerHTML={{ __html: post.content }}
-            ></p>
-
-            <div className="flex items-center justify-center gap-2">
-              <div className="flex gap-1">
+            ></p> */}
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2">
                 <Image
                   className="rounded-full"
                   src={man}
-                  alt="authoLogo"
+                  alt="authorLogo"
                   width={20}
                   height={20}
                 />
-                <p>Author: {post.author}</p>
+                <p className="text-sm">Author: {post.author}</p>
               </div>
               <Link
-                className="btn-style btn-style-color"
+                className="btn-style btn-style-color text-sm"
                 href={`/postDetailsPage/${post._id}`}
               >
-                <p>Details</p>
+                Details
               </Link>
             </div>
           </div>
         </div>
       ))}
+
     </div>
   );
 };
