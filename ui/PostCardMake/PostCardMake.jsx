@@ -1,26 +1,27 @@
+import man from "@/assets/trendingTopics/man.webp";
 import Image from "next/image";
 import Link from "next/link";
-import man from "@/assets/trendingTopics/man.webp";
 
 const PostCardMake = ({ postdata }) => {
   return (
-    <div className="flex flex-wrap gap-6 justify-center">
+    <div className="flex flex-col gap-6 md:flex-row justify-center px-4 py-6">
       {postdata.map((post) => (
-        <div key={post._id} className="card w-96 bg-base-100 shadow-xl m-4">
+        <div
+          key={post._id}
+          className="card w-full sm:w-80 md:w-96 bg-base-100 shadow-xl m-4"
+        >
           <figure className="h-80 w-full overflow-hidden">
             <img
               src={post.image}
-              alt="Shoes"
+              alt="Post Image"
               className="object-cover h-full w-full"
               style={{ height: "350px", width: "384px" }}
             />
           </figure>
           <div className="card-body">
-            <h2 className="card-title text-md font-bold mb-2">
-              {post.title}
-            </h2>
+            <h2 className="card-title text-md font-bold mb-2">{post.title}</h2>
             {/* <p
-              className="line-clamp-2  text-sm mb-4"
+              className="line-clamp-2 text-sm mb-4"
               dangerouslySetInnerHTML={{ __html: post.content }}
             ></p> */}
             <div className="flex items-center justify-between">
@@ -44,7 +45,6 @@ const PostCardMake = ({ postdata }) => {
           </div>
         </div>
       ))}
-
     </div>
   );
 };

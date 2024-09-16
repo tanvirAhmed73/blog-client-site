@@ -1,7 +1,8 @@
 const NewsLetters = () => {
   return (
-    <div className="relative mt-16 w-full h-72 mb-10 flex items-center justify-center bg-white">
-      <div className="absolute top-0 left-0 w-28 h-full flex items-center justify-center">
+    <div className="relative mt-16 w-full h-auto mb-10 flex flex-col lg:flex-row items-center justify-center bg-white p-6 lg:p-12">
+      {/* SVG Decorations */}
+      <div className="absolute top-0 left-0 w-28 h-full flex items-center justify-center -z-10">
         <svg
           className="bg"
           width="284"
@@ -22,7 +23,7 @@ const NewsLetters = () => {
           ></path>
         </svg>
       </div>
-      <div className="absolute top-0 right-0 w-28 h-full flex items-center justify-center">
+      <div className="absolute top-0 right-0 w-28 h-full flex items-center justify-center -z-10">
         <svg
           className="bg2"
           width="284"
@@ -44,16 +45,20 @@ const NewsLetters = () => {
         </svg>
       </div>
 
-      <div className="text-center space-y-4">
-        <h1 className="font-bold text-3xl">Join To Our Community</h1>
-        <p className="text-lg">
-          Unlock full access to <span className="font-bold">Zento</span> and see the entire library of paid-members
-          only posts.
+      {/* Main Content */}
+      <div className="text-center space-y-4 relative z-10">
+        <h1 className="font-bold text-3xl sm:text-4xl md:text-5xl">
+          Join Our Community
+        </h1>
+        <p className="text-lg sm:text-xl">
+          Unlock full access to <span className="font-bold">Zento</span> and
+          explore our extensive library of exclusive content.
         </p>
-        <p className="text-lg">
-          Subscribe to our <span className="font-bold">newsletter</span>, cancel at anytime
+        <p className="text-lg sm:text-xl">
+          Subscribe to our <span className="font-bold">newsletter</span> and
+          cancel anytime.
         </p>
-        <button className="mt-4 px-6 py-2 bg-gray-800 text-white font-semibold rounded">
+        <button className="mt-4 px-6 py-2 bg-gray-800 text-white font-semibold rounded-lg shadow-lg hover:bg-gray-700 transition duration-300 ease-in-out">
           Join Now
         </button>
       </div>
