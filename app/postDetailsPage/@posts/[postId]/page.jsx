@@ -1,19 +1,19 @@
 "use client";
+import { ArrowBigLeft, Calendar, Clock, Star, Tag, User } from "lucide-react";
 import Image from "next/image";
-import React, { useState, useEffect } from "react";
-import { Calendar, Clock, Tag, User, Star, ArrowBigLeft } from "lucide-react";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 const ArticleInfo = ({ postDetails }) => (
-  <aside className="sticky top-0 self-start">
+  <aside className="sticky top-0 self-start w-full max-w-xs md:max-w-md lg:max-w-sm">
     <Link href={"/"}>
-      <div className="flex text-pink-500">
+      <div className="flex text-pink-500 items-center space-x-2">
         <ArrowBigLeft /> <span>Back To Home</span>
       </div>
     </Link>
 
-    <h2 className="text-xl font-bold">Article Information</h2>
-    <div className="p-4 border rounded-md shadow-md bg-white">
+    <h2 className="text-xl font-bold mt-4">Article Information</h2>
+    <div className="p-4 border rounded-md shadow-md bg-white mt-4">
       <ul className="mt-2 space-y-1">
         <li className="flex items-center">
           <Tag className="w-5 h-5 mr-2 text-pink-500" />
@@ -46,7 +46,9 @@ const Page = ({ params }) => {
 
   useEffect(() => {
     const fetchPostDetails = async () => {
-      const res = await fetch(`https://lynea-server.vercel.app/posts/${postId}`);
+      const res = await fetch(
+        `https://lynea-server.vercel.app/posts/${postId}`
+      );
       if (!res.ok) {
         throw new Error("Network response was not ok");
       }
@@ -58,31 +60,26 @@ const Page = ({ params }) => {
   }, [postId]);
 
   return (
-    <>
-      <main className="flex justify-center px-16 w-11/12  mx-auto py-10">
-        <div className="flex gap-5 max-w-[1200px] w-full">
-          <ArticleInfo postDetails={postDetails} />
-          <section className="flex flex-col gap-5 text-center max-w-[800px] w-full">
-            <h1 className="text-3xl font-bold">{postDetails?.title}</h1>
-            <p className="text-gray-500">
-              <span className="font-bold">Published</span>: Published: September
-              26, 2019
-            </p>
-            <Image
-              className="w-full object-cover"
-              src={postDetails?.image}
-              alt=""
-              width={800}
-              height={400}
-            />
-            <div className="flex justify-between items-center"></div>
-            <div
-              dangerouslySetInnerHTML={{ __html: postDetails?.content }}
-            ></div>
-          </section>
-        </div>
-      </main>
-    </>
+    <main className="flex flex-col lg:flex-row justify-center px-4 sm:px-6 lg:px-16 w-full max-w-screen-lg mx-auto py-10">
+      <ArticleInfo postDetails={postDetails} />
+      <section className="flex flex-col gap-5 text-center w-full lg:ml-5">
+        <h1 className="text-2xl md:text-3xl font-bold">{postDetails?.title}</h1>
+        <p className="text-gray-500">
+          <span className="font-bold">Published</span>: September 26, 2019
+        </p>
+        <Image
+          className="w-full object-cover"
+          src={postDetails?.image}
+          alt=""
+          width={800}
+          height={400}
+        />
+        <div
+          className="prose prose-sm sm:prose-base lg:prose-lg mx-auto"
+          dangerouslySetInnerHTML={{ __html: postDetails?.content }}
+        ></div>
+      </section>
+    </main>
   );
 };
 
